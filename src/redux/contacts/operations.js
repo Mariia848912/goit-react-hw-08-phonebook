@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
-axios.defaults.baseURL = 'https://6481989929fa1c5c5031b342.mockapi.io';
+import { toast } from 'react-toastify';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -10,7 +9,7 @@ export const fetchContacts = createAsyncThunk(
       const response = await axios.get('/contacts');
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.config.method);
     }
   }
 );
@@ -22,7 +21,9 @@ export const addContact = createAsyncThunk(
       const response = await axios.post('/contacts', contact);
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(
+        toast.error('The contact was not added. Try later')
+      );
     }
   }
 );
@@ -34,7 +35,9 @@ export const deleteContact = createAsyncThunk(
       const response = await axios.delete(`/contacts/${contactId}`);
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(
+        toast.error('The contact was not deleted. Try later')
+      );
     }
   }
 );

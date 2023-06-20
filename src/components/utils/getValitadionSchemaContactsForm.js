@@ -13,6 +13,6 @@ export function getValidationSchema() {
 
   return yup.object().shape({
     name: yup.string().required().matches(nameRegExp, nameValidationText),
-    phone: yup.string().required().matches(phoneRegExp, phoneValidationText),
+    number: yup.string().required().matches(phoneRegExp, phoneValidationText),
   });
 }

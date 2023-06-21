@@ -4,8 +4,8 @@ import { getValidationSchema } from '../utils/getValitadionSchemaContactsForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectVisibleContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
-import { FormPhonebook } from './ContactsForm.styled';
 import { Button, TextField } from '@mui/material';
+import { FormPhonebook } from './ContactsForm.styled';
 
 export const ContactsForm = () => {
   const contacts = useSelector(selectVisibleContacts);
@@ -38,7 +38,6 @@ export const ContactsForm = () => {
         return window.alert(`${number} is already in contacts`);
       }
       dispatch(addContact(values));
-      // handleLAddContact(value);
       actions.resetForm();
     },
   });
@@ -47,13 +46,13 @@ export const ContactsForm = () => {
     <FormPhonebook>
       <form onSubmit={formik.handleSubmit}>
         <TextField
-          fullWidth
-          size="small"
           id="name"
           name="name"
-          style={{ marginBottom: '20px' }}
           label="Name"
           type="text"
+          fullWidth
+          size="small"         
+          style={{ marginBottom: '20px' }}
           value={formik.values.name}
           onChange={formik.handleChange}
           error={formik.touched.name && Boolean(formik.errors.name)}
@@ -61,12 +60,12 @@ export const ContactsForm = () => {
         />
 
         <TextField
-          fullWidth
-          size="small"
           id="number"
           name="number"
           label="Number"
           type="tel"
+          fullWidth
+          size="small"      
           style={{ marginBottom: '20px' }}
           value={formik.values.number}
           onChange={formik.handleChange}

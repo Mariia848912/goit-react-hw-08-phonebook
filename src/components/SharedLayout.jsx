@@ -6,14 +6,12 @@ import { LinearProgress } from '@mui/material';
 export const SharedLayout = () => {
   return (
     <>
-   
-     <AppBar />
+      <AppBar />
       <Suspense fallback={<LinearProgress />}>
         <main>
           <Outlet />
         </main>
       </Suspense>
-  
-      </>
+    </>
   );
 };

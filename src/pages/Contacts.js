@@ -21,15 +21,17 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <Container>
+    <>
       {isLoading && <LinearProgress />}
-      <Tittle>Phonebook</Tittle>
-      <ContactsForm />
-      <SecondTittle>Contacts</SecondTittle>
-      <Filter />
-      {!isLoading && error !== 'get' && <ContactsList />}
-      {error === 'get' && <ErrorText />}
-    </Container>
+      <Container>
+        <Tittle>Phonebook</Tittle>
+        <ContactsForm />
+        <SecondTittle>Contacts</SecondTittle>
+        <Filter />
+        {!isLoading && error !== 'get' && <ContactsList />}
+        {error === 'get' && <ErrorText />}
+      </Container>
+    </>
   );
 };
 

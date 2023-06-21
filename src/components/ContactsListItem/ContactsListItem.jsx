@@ -19,7 +19,7 @@ export const ContactsListItem = ({ name, id, number }) => {
           href="#outlined-buttons"
           size="small"
           type="submit"
-          style={{ fontSize: 14, textTransform: 'none' }}
+          style={{ fontSize: 14, textTransform: 'none', marginLeft: 'auto' }}
           onClick={() => dispatch(deleteContact(id))}
         >
           Delete

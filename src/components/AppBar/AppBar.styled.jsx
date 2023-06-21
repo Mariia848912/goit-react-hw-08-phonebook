@@ -20,6 +20,7 @@ export const Header = styled.header`
 export const Link = styled(NavLink)`
   display: inline-block;
   padding: 16px 10px;
+  
   text-decoration: none;
   font-weight: 500;
   color: #000;

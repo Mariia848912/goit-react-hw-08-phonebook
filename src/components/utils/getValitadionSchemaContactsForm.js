@@ -12,7 +12,13 @@ export function getValidationSchema() {
     'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +';
 
   return yup.object().shape({
-    name: yup.string().required().matches(nameRegExp, nameValidationText),
-    number: yup.string().required().matches(phoneRegExp, phoneValidationText),
+    name: yup
+      .string()
+      .required('Name is a required field')
+      .matches(nameRegExp, nameValidationText),
+    number: yup
+      .string()
+      .required('Number is a required field')
+      .matches(phoneRegExp, phoneValidationText),
   });
 }

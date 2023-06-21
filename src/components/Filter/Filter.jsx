@@ -19,7 +19,7 @@ export const Filter = () => {
         variant="outlined"
         value={filter.value}
         onChange={handleChange}
-        style={{ marginBottom: '20px', width: '336px', marginTop: 20 }}
+        style={{ marginBottom: '20px', width: '328px', marginTop: 20 }}
       />
     </ComponentContainer>
   );

@@ -3,6 +3,7 @@ import img from '../image/bg2.jpg';
 
 export const Container = styled.div`
   height: calc(100vh - 52px);
+  padding: 0 16px;
 
   background-color: rgba(47, 48, 58, 0.4);
   background-repeat: no-repeat;
@@ -15,28 +16,47 @@ export const Container = styled.div`
     ),
     url(${img});
 `;
+
 export const Wrapper = styled.div`
-  padding-top: 80px;
-  margin-left: 30px;
   display: flex;
   flex-direction: column;
+  padding-top: 40px;
   max-width: 600px;
+
+    @media screen and (min-width: 768px) {
+     padding-top: 50px;
+      margin-left: 30px;
+  }
 `;
 export const Title = styled.h1`
   color: #fff;
-  font-size: 130px;
+  font-size: 80px;
   font-family: 'Dancing Script', cursive;
+
+  @media screen and (min-width: 768px) {
+    font-size: 130px;
+  }
 `;
 
 export const Text = styled.p`
   margin-top: 10px;
+
   color: #fff;
   font-family: 'Dancing Script', cursive;
-  font-size: 26px;
+  font-size: 20px;
+
+   @media screen and (min-width: 768px) {
+    font-size: 26px;
+  }
 `;
 
 export const ButtonsBox = styled.div`
-  margin-top: 260px;
   display: flex;
   flex-direction: column;
+
+  margin-top: 200px;
+    
+    @media screen and (min-width: 768px) {
+    margin-top: 240px;
+  }
 `;

@@ -5,6 +5,5 @@ export const Text = styled.p`
   margin-right: auto;
   padding-left: 14px;
 
-  width: 420px;
   text-align: start;
 `;

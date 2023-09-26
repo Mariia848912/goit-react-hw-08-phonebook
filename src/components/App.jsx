@@ -41,4 +41,3 @@ export function App() {
 
   );
 }
-// style={{ marginRight: 'auto',  marginLeft: 'auto',}}
